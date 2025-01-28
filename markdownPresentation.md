@@ -22,7 +22,8 @@
 
 ### List of All Options Looked At
 - Put failed options at the end and why they were excluded/not looked at.
-     - (Options : PowerApps, Nintex, Zoho, Cognito, Formstack, TypeForm, Kudzu, Nitro, SharepointOnline, Fillout, YouForm, Tally, JotForm)
+    - (Options : PowerApps, Nintex, Zoho, Cognito, Formstack, 
+      TypeForm, Kudzu, Nitro, SharepointOnline, Fillout, YouForm, Tally, JotForm)
             
 
 ### Different Form Application
@@ -59,28 +60,26 @@
   - New fields become visible.  
   - Form fields gain values based off of input.
 
-### Slide 4: Deeper Infopath Overview  ******
+### Slide 4: Deeper Infopath Overview  
 - **Form Connections**  
   - API connections are called through .asmx
   - Ability to send email using form values.
   - Abilty to access sharepoint list/library and submit data (also receive??)
 
-### Slide 5:  ******
+### Slide 5: List of Form Options 
 - **List of Options**  
-  - Two column list containing optionName and  
+  - Two column list containing optionName and color field (green, yellow, red)
 - XXX
 
-### Slide 6: ******
-- **XXX**  
-  - XXX 
-- XXX
+### Slide 6: Form Title (serves as divider)
 
-### Slide 7: ******
-- **XXX**  
-  - XXX 
-- XXX
+### Slide 7: Different Form Pros/Cons
+- **Pros/Cons**  
+  - Two column list containing  
 
-### Slide 8: ******
-- **XXX**  
-  - XXX 
-- XXX
+### Slide 8: Comparing New Form to InfoPath
+- **Show a Mock beside InfoPath**
+
+### Slide 9: Continue Previous Slide 
+
+### Repeat Slides 7-9
