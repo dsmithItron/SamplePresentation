@@ -69,7 +69,6 @@
 ### Slide 5: List of Form Options 
 - **List of Options**  
   - Two column list containing optionName and color field (green, yellow, red)
-- XXX
 
 ### Slide 6: Form Title (serves as divider)
 
