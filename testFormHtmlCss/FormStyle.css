@@ -1,2 +1,59 @@
-﻿body {
+﻿html, body {
+    height: 100%; /* Ensure that html and body take up the full height of the viewport */
+    margin: 0; /* Remove any default margin from the body */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align the form to the top */
+    background: #b4b4b4;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+#testForm {
+    border: dashed;
+    border: 1px solid green;
+    width: 60%;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Make the form take up the full height */ 
+}
+
+#head {
+    border: dashed;
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+}
+
+#body {
+    border: dashed;
+    border: 1px solid red;
+    width: 100%;
+    flex-grow: 1; /* Make the body take up all available space */
+    display: flex;
+    flex-direction: column;
+}
+
+#footer {
+    border: dashed;
+    border: 1px solid red;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel {
+    border: dashed;
+    border: 1px solid green;
+    border-bottom: 2px solid black;
+    height: 80px; /* Set a fixed height for each panel */
 }
