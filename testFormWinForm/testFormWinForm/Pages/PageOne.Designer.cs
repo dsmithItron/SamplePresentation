@@ -44,44 +44,54 @@ namespace testFormWinForm
             custPartNumLabel = new Label();
             contactHeaderLabel = new Label();
             contactInformationPanel = new Panel();
-            advancedAddressPanel = new Panel();
-            phoneNumLabel = new Label();
             addressDropDown = new ComboBox();
             addressesLabel = new Label();
             refreshButton = new Button();
             accountDropDown = new ComboBox();
             accountLabel = new Label();
+            expandPanel = new Panel();
+            advancedAddressPanel = new Panel();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label5 = new Label();
+            addressLine3Label = new Label();
+            addressLine2Label = new Label();
+            addressLine1Label = new Label();
+            phoneNumLabel = new Label();
             meterPoPanel = new TableLayoutPanel();
+            panel2 = new Panel();
+            panel1 = new Panel();
             purchaseOrderPanel = new Panel();
             meterSpecPanel = new Panel();
             documentEditPanel = new Panel();
             specialReqPanel = new Panel();
-            addressLine1Label = new Label();
-            addressLine2Label = new Label();
-            addressLine3Label = new Label();
-            label5 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            label2 = new Label();
+            textBox7 = new TextBox();
+            label3 = new Label();
+            textBox8 = new TextBox();
+            label4 = new Label();
             footerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)headerPicture).BeginInit();
             clientViewPanel.SuspendLayout();
             productPanel.SuspendLayout();
             contactHeaderPanel.SuspendLayout();
             contactInformationPanel.SuspendLayout();
+            expandPanel.SuspendLayout();
             advancedAddressPanel.SuspendLayout();
             meterPoPanel.SuspendLayout();
             SuspendLayout();
             // 
             // footerPanel
             // 
-            footerPanel.Anchor = AnchorStyles.None;
             footerPanel.BackColor = Color.FromArgb(24, 30, 54);
             footerPanel.Controls.Add(prevButton);
             footerPanel.Controls.Add(nextButton);
-            footerPanel.Location = new Point(0, 766);
+            footerPanel.Dock = DockStyle.Bottom;
+            footerPanel.Location = new Point(0, 866);
             footerPanel.Margin = new Padding(0);
             footerPanel.Name = "footerPanel";
             footerPanel.Padding = new Padding(400, 0, 400, 0);
@@ -136,12 +146,14 @@ namespace testFormWinForm
             clientViewPanel.Controls.Add(productPanel);
             clientViewPanel.Controls.Add(contactHeaderPanel);
             clientViewPanel.Controls.Add(contactInformationPanel);
+            clientViewPanel.Controls.Add(expandPanel);
             clientViewPanel.Controls.Add(meterPoPanel);
             clientViewPanel.Controls.Add(documentEditPanel);
             clientViewPanel.Controls.Add(specialReqPanel);
             clientViewPanel.Location = new Point(0, 50);
+            clientViewPanel.Margin = new Padding(0);
             clientViewPanel.Name = "clientViewPanel";
-            clientViewPanel.Size = new Size(1000, 713);
+            clientViewPanel.Size = new Size(1000, 816);
             clientViewPanel.TabIndex = 3;
             // 
             // productPanel
@@ -157,6 +169,7 @@ namespace testFormWinForm
             // 
             // label1
             // 
+            label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Red;
@@ -226,7 +239,7 @@ namespace testFormWinForm
             // 
             contactInformationPanel.Anchor = AnchorStyles.None;
             contactInformationPanel.BackColor = Color.WhiteSmoke;
-            contactInformationPanel.Controls.Add(advancedAddressPanel);
+            contactInformationPanel.BorderStyle = BorderStyle.FixedSingle;
             contactInformationPanel.Controls.Add(addressDropDown);
             contactInformationPanel.Controls.Add(addressesLabel);
             contactInformationPanel.Controls.Add(refreshButton);
@@ -235,36 +248,8 @@ namespace testFormWinForm
             contactInformationPanel.Location = new Point(0, 134);
             contactInformationPanel.Margin = new Padding(0);
             contactInformationPanel.Name = "contactInformationPanel";
-            contactInformationPanel.Size = new Size(1000, 354);
+            contactInformationPanel.Size = new Size(1000, 123);
             contactInformationPanel.TabIndex = 2;
-            // 
-            // advancedAddressPanel
-            // 
-            advancedAddressPanel.BackColor = Color.Gainsboro;
-            advancedAddressPanel.Controls.Add(textBox5);
-            advancedAddressPanel.Controls.Add(textBox4);
-            advancedAddressPanel.Controls.Add(textBox3);
-            advancedAddressPanel.Controls.Add(textBox2);
-            advancedAddressPanel.Controls.Add(textBox1);
-            advancedAddressPanel.Controls.Add(label5);
-            advancedAddressPanel.Controls.Add(addressLine3Label);
-            advancedAddressPanel.Controls.Add(addressLine2Label);
-            advancedAddressPanel.Controls.Add(addressLine1Label);
-            advancedAddressPanel.Controls.Add(phoneNumLabel);
-            advancedAddressPanel.Location = new Point(12, 122);
-            advancedAddressPanel.Name = "advancedAddressPanel";
-            advancedAddressPanel.Size = new Size(956, 214);
-            advancedAddressPanel.TabIndex = 5;
-            advancedAddressPanel.Visible = false;
-            // 
-            // phoneNumLabel
-            // 
-            phoneNumLabel.AutoSize = true;
-            phoneNumLabel.Location = new Point(48, 29);
-            phoneNumLabel.Name = "phoneNumLabel";
-            phoneNumLabel.Size = new Size(91, 15);
-            phoneNumLabel.TabIndex = 0;
-            phoneNumLabel.Text = "Phone Number:";
             // 
             // addressDropDown
             // 
@@ -274,7 +259,7 @@ namespace testFormWinForm
             addressDropDown.Name = "addressDropDown";
             addressDropDown.Size = new Size(121, 23);
             addressDropDown.TabIndex = 4;
-            addressDropDown.SelectionChangeCommitted += addressDropDown_SelectionChangeCommitted;
+            addressDropDown.SelectionChangeCommitted += AddressDropDown_SelectionChangeCommitted;
             // 
             // addressesLabel
             // 
@@ -316,74 +301,86 @@ namespace testFormWinForm
             accountLabel.TabIndex = 0;
             accountLabel.Text = "Account: ";
             // 
-            // meterPoPanel
+            // expandPanel
             // 
-            meterPoPanel.ColumnCount = 2;
-            meterPoPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            meterPoPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            meterPoPanel.Controls.Add(purchaseOrderPanel, 1, 0);
-            meterPoPanel.Controls.Add(meterSpecPanel, 0, 0);
-            meterPoPanel.Location = new Point(0, 488);
-            meterPoPanel.Margin = new Padding(0);
-            meterPoPanel.Name = "meterPoPanel";
-            meterPoPanel.RowCount = 1;
-            meterPoPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            meterPoPanel.Size = new Size(1000, 121);
-            meterPoPanel.TabIndex = 3;
+            expandPanel.Anchor = AnchorStyles.None;
+            expandPanel.BackColor = Color.WhiteSmoke;
+            expandPanel.Controls.Add(advancedAddressPanel);
+            expandPanel.Location = new Point(0, 257);
+            expandPanel.Margin = new Padding(0);
+            expandPanel.Name = "expandPanel";
+            expandPanel.Size = new Size(1000, 228);
+            expandPanel.TabIndex = 6;
+            expandPanel.Visible = false;
             // 
-            // purchaseOrderPanel
+            // advancedAddressPanel
             // 
-            purchaseOrderPanel.BackColor = Color.WhiteSmoke;
-            purchaseOrderPanel.Location = new Point(503, 3);
-            purchaseOrderPanel.Name = "purchaseOrderPanel";
-            purchaseOrderPanel.Size = new Size(494, 115);
-            purchaseOrderPanel.TabIndex = 1;
+            advancedAddressPanel.BackColor = Color.Gainsboro;
+            advancedAddressPanel.Controls.Add(textBox8);
+            advancedAddressPanel.Controls.Add(label4);
+            advancedAddressPanel.Controls.Add(textBox7);
+            advancedAddressPanel.Controls.Add(label3);
+            advancedAddressPanel.Controls.Add(textBox6);
+            advancedAddressPanel.Controls.Add(label2);
+            advancedAddressPanel.Controls.Add(textBox5);
+            advancedAddressPanel.Controls.Add(textBox4);
+            advancedAddressPanel.Controls.Add(textBox3);
+            advancedAddressPanel.Controls.Add(textBox2);
+            advancedAddressPanel.Controls.Add(textBox1);
+            advancedAddressPanel.Controls.Add(label5);
+            advancedAddressPanel.Controls.Add(addressLine3Label);
+            advancedAddressPanel.Controls.Add(addressLine2Label);
+            advancedAddressPanel.Controls.Add(addressLine1Label);
+            advancedAddressPanel.Controls.Add(phoneNumLabel);
+            advancedAddressPanel.Location = new Point(21, 16);
+            advancedAddressPanel.Name = "advancedAddressPanel";
+            advancedAddressPanel.Size = new Size(956, 201);
+            advancedAddressPanel.TabIndex = 5;
+            advancedAddressPanel.Visible = false;
             // 
-            // meterSpecPanel
+            // textBox5
             // 
-            meterSpecPanel.BackColor = Color.WhiteSmoke;
-            meterSpecPanel.Location = new Point(3, 3);
-            meterSpecPanel.Name = "meterSpecPanel";
-            meterSpecPanel.Size = new Size(494, 115);
-            meterSpecPanel.TabIndex = 0;
+            textBox5.Location = new Point(145, 108);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(234, 23);
+            textBox5.TabIndex = 9;
             // 
-            // documentEditPanel
+            // textBox4
             // 
-            documentEditPanel.Anchor = AnchorStyles.None;
-            documentEditPanel.BackColor = Color.WhiteSmoke;
-            documentEditPanel.Location = new Point(0, 609);
-            documentEditPanel.Margin = new Padding(0);
-            documentEditPanel.Name = "documentEditPanel";
-            documentEditPanel.Size = new Size(1000, 55);
-            documentEditPanel.TabIndex = 3;
+            textBox4.Location = new Point(145, 79);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(234, 23);
+            textBox4.TabIndex = 8;
             // 
-            // specialReqPanel
+            // textBox3
             // 
-            specialReqPanel.Anchor = AnchorStyles.None;
-            specialReqPanel.BackColor = Color.WhiteSmoke;
-            specialReqPanel.Location = new Point(0, 664);
-            specialReqPanel.Margin = new Padding(0);
-            specialReqPanel.Name = "specialReqPanel";
-            specialReqPanel.Size = new Size(1000, 49);
-            specialReqPanel.TabIndex = 4;
+            textBox3.Location = new Point(145, 50);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(234, 23);
+            textBox3.TabIndex = 7;
             // 
-            // addressLine1Label
+            // textBox2
             // 
-            addressLine1Label.AutoSize = true;
-            addressLine1Label.Location = new Point(48, 58);
-            addressLine1Label.Name = "addressLine1Label";
-            addressLine1Label.Size = new Size(91, 15);
-            addressLine1Label.TabIndex = 1;
-            addressLine1Label.Text = "Phone Number:";
+            textBox2.Location = new Point(569, 21);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(234, 23);
+            textBox2.TabIndex = 6;
             // 
-            // addressLine2Label
+            // textBox1
             // 
-            addressLine2Label.AutoSize = true;
-            addressLine2Label.Location = new Point(48, 87);
-            addressLine2Label.Name = "addressLine2Label";
-            addressLine2Label.Size = new Size(91, 15);
-            addressLine2Label.TabIndex = 2;
-            addressLine2Label.Text = "Phone Number:";
+            textBox1.Location = new Point(145, 21);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(234, 23);
+            textBox1.TabIndex = 5;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(472, 29);
+            label5.Name = "label5";
+            label5.Size = new Size(91, 15);
+            label5.TabIndex = 4;
+            label5.Text = "Phone Number:";
             // 
             // addressLine3Label
             // 
@@ -394,56 +391,157 @@ namespace testFormWinForm
             addressLine3Label.TabIndex = 3;
             addressLine3Label.Text = "Phone Number:";
             // 
-            // label5
+            // addressLine2Label
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(48, 145);
-            label5.Name = "label5";
-            label5.Size = new Size(91, 15);
-            label5.TabIndex = 4;
-            label5.Text = "Phone Number:";
+            addressLine2Label.AutoSize = true;
+            addressLine2Label.Location = new Point(48, 87);
+            addressLine2Label.Name = "addressLine2Label";
+            addressLine2Label.Size = new Size(91, 15);
+            addressLine2Label.TabIndex = 2;
+            addressLine2Label.Text = "Phone Number:";
             // 
-            // textBox1
+            // addressLine1Label
             // 
-            textBox1.Location = new Point(145, 21);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(234, 23);
-            textBox1.TabIndex = 5;
+            addressLine1Label.AutoSize = true;
+            addressLine1Label.Location = new Point(48, 58);
+            addressLine1Label.Name = "addressLine1Label";
+            addressLine1Label.Size = new Size(91, 15);
+            addressLine1Label.TabIndex = 1;
+            addressLine1Label.Text = "Phone Number:";
             // 
-            // textBox2
+            // phoneNumLabel
             // 
-            textBox2.Location = new Point(145, 137);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(234, 23);
-            textBox2.TabIndex = 6;
+            phoneNumLabel.AutoSize = true;
+            phoneNumLabel.Location = new Point(48, 29);
+            phoneNumLabel.Name = "phoneNumLabel";
+            phoneNumLabel.Size = new Size(91, 15);
+            phoneNumLabel.TabIndex = 0;
+            phoneNumLabel.Text = "Phone Number:";
             // 
-            // textBox3
+            // meterPoPanel
             // 
-            textBox3.Location = new Point(145, 50);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(234, 23);
-            textBox3.TabIndex = 7;
+            meterPoPanel.ColumnCount = 2;
+            meterPoPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            meterPoPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            meterPoPanel.Controls.Add(panel2, 1, 1);
+            meterPoPanel.Controls.Add(panel1, 0, 1);
+            meterPoPanel.Controls.Add(purchaseOrderPanel, 1, 0);
+            meterPoPanel.Controls.Add(meterSpecPanel, 0, 0);
+            meterPoPanel.Location = new Point(0, 485);
+            meterPoPanel.Margin = new Padding(0);
+            meterPoPanel.Name = "meterPoPanel";
+            meterPoPanel.RowCount = 2;
+            meterPoPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            meterPoPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            meterPoPanel.Size = new Size(1000, 178);
+            meterPoPanel.TabIndex = 3;
             // 
-            // textBox4
+            // panel2
             // 
-            textBox4.Location = new Point(145, 79);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(234, 23);
-            textBox4.TabIndex = 8;
+            panel2.BackColor = Color.WhiteSmoke;
+            panel2.Location = new Point(503, 92);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(494, 83);
+            panel2.TabIndex = 3;
             // 
-            // textBox5
+            // panel1
             // 
-            textBox5.Location = new Point(145, 108);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(234, 23);
-            textBox5.TabIndex = 9;
+            panel1.BackColor = Color.WhiteSmoke;
+            panel1.Location = new Point(3, 92);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(494, 83);
+            panel1.TabIndex = 2;
+            // 
+            // purchaseOrderPanel
+            // 
+            purchaseOrderPanel.BackColor = Color.WhiteSmoke;
+            purchaseOrderPanel.Location = new Point(503, 3);
+            purchaseOrderPanel.Name = "purchaseOrderPanel";
+            purchaseOrderPanel.Size = new Size(494, 83);
+            purchaseOrderPanel.TabIndex = 1;
+            // 
+            // meterSpecPanel
+            // 
+            meterSpecPanel.BackColor = Color.WhiteSmoke;
+            meterSpecPanel.Location = new Point(3, 3);
+            meterSpecPanel.Name = "meterSpecPanel";
+            meterSpecPanel.Size = new Size(494, 83);
+            meterSpecPanel.TabIndex = 0;
+            // 
+            // documentEditPanel
+            // 
+            documentEditPanel.Anchor = AnchorStyles.None;
+            documentEditPanel.BackColor = Color.WhiteSmoke;
+            documentEditPanel.Location = new Point(0, 663);
+            documentEditPanel.Margin = new Padding(0);
+            documentEditPanel.Name = "documentEditPanel";
+            documentEditPanel.Size = new Size(1000, 103);
+            documentEditPanel.TabIndex = 3;
+            // 
+            // specialReqPanel
+            // 
+            specialReqPanel.Anchor = AnchorStyles.None;
+            specialReqPanel.BackColor = Color.WhiteSmoke;
+            specialReqPanel.Location = new Point(0, 766);
+            specialReqPanel.Margin = new Padding(0);
+            specialReqPanel.Name = "specialReqPanel";
+            specialReqPanel.Size = new Size(1000, 49);
+            specialReqPanel.TabIndex = 4;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(569, 50);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(234, 23);
+            textBox6.TabIndex = 11;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(472, 58);
+            label2.Name = "label2";
+            label2.Size = new Size(91, 15);
+            label2.TabIndex = 10;
+            label2.Text = "Phone Number:";
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(569, 79);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(234, 23);
+            textBox7.TabIndex = 13;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(472, 87);
+            label3.Name = "label3";
+            label3.Size = new Size(91, 15);
+            label3.TabIndex = 12;
+            label3.Text = "Phone Number:";
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(569, 108);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(234, 23);
+            textBox8.TabIndex = 15;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(472, 116);
+            label4.Name = "label4";
+            label4.Size = new Size(91, 15);
+            label4.TabIndex = 14;
+            label4.Text = "Phone Number:";
             // 
             // PageOne
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
-            ClientSize = new Size(1000, 800);
+            ClientSize = new Size(1000, 900);
             Controls.Add(headerPicture);
             Controls.Add(clientViewPanel);
             Controls.Add(footerPanel);
@@ -459,6 +557,7 @@ namespace testFormWinForm
             contactHeaderPanel.PerformLayout();
             contactInformationPanel.ResumeLayout(false);
             contactInformationPanel.PerformLayout();
+            expandPanel.ResumeLayout(false);
             advancedAddressPanel.ResumeLayout(false);
             advancedAddressPanel.PerformLayout();
             meterPoPanel.ResumeLayout(false);
@@ -500,5 +599,14 @@ namespace testFormWinForm
         private Label addressLine3Label;
         private Label addressLine2Label;
         private Label addressLine1Label;
+        private Panel expandPanel;
+        private Panel panel2;
+        private Panel panel1;
+        private TextBox textBox8;
+        private Label label4;
+        private TextBox textBox7;
+        private Label label3;
+        private TextBox textBox6;
+        private Label label2;
     }
 }

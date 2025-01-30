@@ -9,19 +9,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="PageFive.cs">
+    <Compile Update="Pages\PageFive.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="PageFour.cs">
+    <Compile Update="Pages\PageFour.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="PageThree.cs">
+    <Compile Update="Pages\PageThree.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="PageTwo.cs">
+    <Compile Update="Pages\PageTwo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="PageOne.cs">
+    <Compile Update="Pages\PageOne.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">

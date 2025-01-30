@@ -4,10 +4,14 @@ namespace testFormWinForm
 {
     public partial class PageOne : Form
     {
+        FormVariables formVars = new FormVariables();
         public PageOne()
         {
             InitializeComponent();
             FillPageNumber();
+            clientViewPanel.Height = clientViewPanel.Height - expandPanel.Height;
+            this.Height = this.Height - expandPanel.Height;
+            
         }
 
         private void NextButton_Click(object sender, System.EventArgs e)
@@ -35,15 +39,19 @@ namespace testFormWinForm
 
         private void AccountDropDown_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            string[] addresses = GetAddresses(accountDropDown.SelectedItem.ToString());
-
-            foreach (string address in addresses)
+            if (accountDropDown.SelectedItem != null)
             {
-                addressDropDown.Items.Add(address);
+                string[] addresses = GetAddresses(accountDropDown.SelectedItem.ToString());
+
+                foreach (string address in addresses)
+                {
+                    addressDropDown.Items.Add(address);
+                }
+                formVars.AccountName = accountDropDown.SelectedItem.ToString();
             }
         }
 
-        private string[] GetAddresses(string account)
+        private static string[] GetAddresses(string account)
         {
             if (!(string.IsNullOrEmpty(account)))
             {
@@ -70,9 +78,16 @@ namespace testFormWinForm
             pageNumBox.SelectionAlignment = HorizontalAlignment.Center;
         }
 
-        private void addressDropDown_SelectionChangeCommitted(object sender, EventArgs e)
+        private void AddressDropDown_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            advancedAddressPanel.Visible = true;
+            if (addressDropDown.SelectedItem != null)
+            {
+                formVars.AccountAddress = accountDropDown.SelectedItem.ToString();
+                clientViewPanel.Height = clientViewPanel.Height + expandPanel.Height;
+                this.Height = this.Height + expandPanel.Height;
+                expandPanel.Visible = true;
+                advancedAddressPanel.Visible = true;
+            }
         }
     }
 
