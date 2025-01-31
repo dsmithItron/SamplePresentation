@@ -1,4 +1,9 @@
-﻿html, body {
+﻿* {
+
+    box-sizing: border-box;
+}
+
+html, body {
     height: 100%; /* Ensure that html and body take up the full height of the viewport */
     margin: 0; /* Remove any default margin from the body */
 }
@@ -7,25 +12,38 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align the form to the top */
-    background: #b4b4b4;
+    background: white;
     padding-top: 30px;
     padding-bottom: 20px;
 }
 
 #testForm {
-    border: dashed;
-    border: 1px solid green;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
     width: 60%;
-    min-width: 250px;
+    min-width: 700px;
+    max-width: 700px;
+    min-height: 650px;
     display: flex;
     flex-direction: column;
-    height: 100%; /* Make the form take up the full height */ 
+    height: 100%; /* Make the form take up the full height */
 }
+/*  Create Line at center of form
+#testForm::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px; 
+    background-color: black; 
+}
+*/
 
 #head {
-    border: dashed;
-    border: 1px solid red;
-    width: 100%;
+    border: 1px solid black;
+    width: 99.9%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,17 +51,16 @@ body {
 }
 
 #body {
-    border: dashed;
-    border: 1px solid red;
     width: 100%;
     flex-grow: 1; /* Make the body take up all available space */
+    min-width: 600px;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
 }
 
-#footer {
-    border: dashed;
-    border: 1px solid red;
+#foot {
+    border: 1px solid black;
     width: 100%;
     height: 10%;
     display: flex;
@@ -52,8 +69,304 @@ body {
 }
 
 .panel {
-    border: dashed;
-    border: 1px solid green;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     height: 80px; /* Set a fixed height for each panel */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#product {
+    height: 50px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    background-color: rgb(216,216,216);
+    color: darkred;
+    font: bold 20px calibri;
+}
+
+
+/* contact header fields start */
+#contactHeader {
+    flex-flow: column;
+    justify-content: flex-start;
+    height: 70px;
+}
+
+#partNumInnerPanel {
+    width: 100%;
+    height: 50%;
+    justify-content: flex-end;
+    align-items: end;
+}
+
+#custPartNumLabel {
+    font-size: 14px;
+    opacity: 60%;
+    color: rgb(127, 150, 191);
+}
+
+#custPartNumBox {
+    margin-right: 5px;
+}
+
+#contactInfoInnerPanel {
+    width: 100%;
+    height: 50%;
+    align-items: end;
+    justify-content: space-between
+}
+
+#contactInfoHeader {
+    flex: 1;
+    margin-left: 80px;
+    text-align: center;
+    font: bold 18px calibri;
+}
+
+#pageNumBox {
+    font: bold 16px calibri;
+    margin-right: 5px;
+}
+/* contact header fields end */
+
+
+/* contact header fields start */
+#contactInfo {
+    flex-flow: column;
+}
+
+#accountInnerPanel {
+    width: 100%;
+}
+
+#accountDrop {
+    width: 60%;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#addressInnerPanel {
+    width: 100%;
+}
+
+#addressDrop {
+    width: 80%;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+/* contact header fields end */
+
+
+/* contact detail fields start */
+#contactDetailedInfoHeader{
+    margin: 0px;
+    margin-left: 5px;
+}
+
+#contactDetailedInfo {
+    height: fit-content;
+    border: 0px;
+    padding: 5px;
+}
+
+#contactLeftPanel,
+#contactRightPanel {
+    display: flex;
+    border: 0px;
+    flex-direction: row;
+    height: 100%;
+    align-items: flex-start;
+    width: 50%;
+}
+
+#labelPanelLeft,
+#labelPanelRight {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 95%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#inputPanelLeft,
+#inputPanelRight {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 95%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.contactLabel {
+    font: 15px calibri;
+    height: 20px;
+    width: 100%;
+    text-align: right;
+    margin-top: 5px;
+}
+
+.contactInput {
+    height: 20px;
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+/* contact detail fields end */
+
+
+#checkBoxPanel {
+    height:fit-content;
+    margin-bottom: 5px;
+}
+
+
+/* 2x2 grid start */
+#grid {
+    display: flex;
+    flex-flow: row wrap;
+    height: fit-content;
+}
+
+#meterSpec, #poNumber, #docNameDesc, #docAlias {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    font: 14px calibri;
+    height: 120px;
+}
+
+/* Meter Specification fields start */
+#meterSpec {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    justify-content: start;
+}
+
+#meterSpecHeader {
+    align-self: start;
+    margin-left: 3px;
+    font: bold 14px calibri;
+}
+
+#meterSpecInfoHeader {
+    font: 13px calibri;
+    color: red;
+    margin-bottom: 0px;
+}
+
+#meterSpecInfo {
+    color: red;
+    font: 13px red calibri;
+    text-align: center;
+    margin-top: 0px;
+    height: 100%;
+}
+
+#meterSpecInputContainer {
+    margin-bottom: 3px;
+}
+
+#itemNumber, #itemNumberOf {
+    width: 40px;
+}
+/* Meter Specification fields end */
+
+
+/* P.O. Number fields begin*/
+#poNumber {
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    align-items: center;
+    justify-content: end;
+    padding-bottom: 1px;
+}
+
+
+#poNumberInfo {
+    color: red;
+    font: 14px red calibri;
+    text-align: center;
+}
+/* P.O. Number fields end*/
+
+
+/* Document Description fields start */
+#docNameDesc {
+    border-right: 1px solid black;
+}
+
+#docDescHeader {
+    align-self: start;
+    margin-left: 3px;
+    font: bold 14px calibri;
+}
+
+#docDescInfoHeader {
+    font: 13px calibri;
+    color: red;
+    margin-bottom: 0px;
+}
+
+#docDescInfo {
+    color: red;
+    font: 13px calibri;
+    text-align: center;
+    margin-top: 0px;
+    height: 100%;
+}
+/* Document Description fields end */
+
+#docAlias {
+    border-left: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+#docAliasBox {
+    margin-top: 20px;
+}
+
+#docAliasInfo {
+    text-align: center;
+    margin: 0;
+    margin-top: auto;
+    font: 14px calibri;
+    color: red;
+}
+
+#docDescFinisher {
+    text-align: center;
+    font: bold 14px calibri;
+    margin: 0;
+    color: red;
+    margin-bottom: auto;
+}
+/* contact detail fields end */
+
+
+#specialReqs {
+    height: 100px;
+    display: flex;
+    flex-flow: column;
+    justify-content: start;
+    align-items: start;
+}
+
+#specialReqHeader {
+    height: 30%;
+    width: 100%;
+    font: bold 16px calibri;
+    margin-left: 1px;
+}
+
+#specialRequirementBox {
+    align-self: center;
+    width: 99%;
+    height: 90%;
+    margin-bottom: 5px;
 }

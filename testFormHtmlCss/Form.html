@@ -8,20 +8,148 @@
 </head>
 <body>
     <div id="testForm">
-        <header id="head">Header</header>
-        <div id="body">
-            <div class="panel"></div>
-            <div class="panel"></div>
-            <div class="panel"></div>
-            <div class="panel"></div>
-            <div class="panel"></div>
-            <div class="panel"></div>
-            <div class="panel"></div>
-            <div class="panel"></div>
-            <div class="panel"></div>
-        </div>
+        <img src="header.png" id="head" Header>
 
-        <div id="footer">Footer</div>
+        <div id="body">
+
+            <div class="panel" id="product">Product: Product Sample</div>
+
+            <div class="panel" id="contactHeader">
+                <div class="panel" id="partNumInnerPanel">
+                    <label for="custPartNumBox" id="custPartNumLabel">Customer Part Number:</label>
+                    <input id="custPartNumBox" placeholder="123" readonly>
+                </div>
+                <div class="panel" id="contactInfoInnerPanel">
+                    <header id="contactInfoHeader">Contact Information</header>
+                    <div id="pageNumBox">1 2 3 4 5 6</div>
+                </div>
+            </div>
+
+            <div class="panel" id="contactInfo">
+                <div class="panel" id="accountInnerPanel">
+                    <label for="accountDrop">Account:</label>
+                    <select id="accountDrop" name=" ">
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value=""> </option>
+                        <option value="optOne">OptionOne</option>
+                        <option value="optTwo">OptionTwo</option>
+                        <option value="optThree">OptionThree</option>
+                    </select>
+                    <button id="accountRefreshButton">Refresh</button>
+                </div>
+                <div class="panel" id="addressInnerPanel">
+                    <label for="addressDrop">Address:</label>
+                    <select id="addressDrop" name=" ">
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value=""> </option>
+                        <option value="optOne">OptionOne</option>
+                        <option value="optTwo">OptionTwo</option>
+                        <option value="optThree">OptionThree</option>
+                    </select>
+                </div>
+            </div>
+
+            <header id="contactDetailedInfoHeader">Customer</header>
+            <div class="panel" id="contactDetailedInfo">
+                <div class="panel" id="contactLeftPanel">
+                    <div id="labelPanelLeft">
+                        <label for="contactName" class="contactLabel"> Name: </label>
+                        <label for="address1" class="contactLabel"> Address1: </label>
+                        <label for="address2" class="contactLabel"> Address2: </label>
+                        <label for="address3" class="contactLabel"> Address3: </label>
+                        <label for="address4" class="contactLabel"> Address4: </label>
+                        <label for="contactPhone" class="contactLabel"> Phone Number: </label>
+                        <label for="contactExtension" class="contactLabel"> Extension: </label>
+                    </div>
+                    <div id="inputPanelLeft">
+                        <input id="contactName" class="contactInput" placeholder="abc">
+                        <input id="address1" class="contactInput" placeholder="123 abc drive">
+                        <input id="address2" class="contactInput" placeholder="123 abc drive">
+                        <input id="address3" class="contactInput" placeholder="123 abc drive">
+                        <input id="address4" class="contactInput" placeholder="123 abc drive">
+                        <input id="contactPhone" class="contactInput" placeholder="123 456 7890">
+                        <input id="contactExtension" class="contactInput" placeholder="abc">
+                    </div>
+                </div>
+
+                <div class="panel" id="contactRightPanel">
+                    <div id="labelPanelRight">
+                        <label for="contactCity" class="contactLabel"> City: </label>
+                        <label for="contactStateProvince" class="contactLabel"> State/Province: </label>
+                        <label for="contactZip" class="contactLabel"> Zip Code: </label>
+                        <label for="contactCountry" class="contactLabel"> Country: </label>
+                        <label for="contactContact" class="contactLabel"> Contact: </label>
+                        <label for="contactFax" class="contactLabel"> Fax Number: </label>
+                        <label for="contactEmail" class="contactLabel"> Email Address: </label>
+                    </div>
+                    <div id="inputPanelRight">
+                        <input id="contactCity" class="contactInput" placeholder="abc def">
+                        <input id="contactStateProvince" class="contactInput" placeholder="abc">
+                        <input id="contactZip" class="contactInput" placeholder="abc">
+                        <input id="contactCountry" class="contactInput" placeholder="abc">
+                        <input id="contactContact" class="contactInput" placeholder="abc">
+                        <input id="contactFax" class="contactInput" placeholder="abc">
+                        <input id="contactEmail" class="contactInput" placeholder="abc@email.com">
+                    </div>
+                </div>
+            </div>
+
+            <div id="checkBoxPanel">
+                <input type="checkbox" id="endUserSameCheck" name="checkBox" value="" />
+                <label for="endUserSameCheck">End User Information Same as Customer information</label>
+            </div>
+
+            <div class="panel" id="grid">
+                <div class="panel" id="meterSpec">
+                    <header id="meterSpecHeader">Meter Specification</header>
+                    <header id="meterSpecInfoHeader">(Optional)</header>
+                    <p id="meterSpecInfo">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor. Aenean massa.
+                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur.
+                    </p>
+                    <div id="meterSpecInputContainer">
+                        <label for="itemNumber">Item Number:  </label>
+                        <input id="itemNumber" />
+                        <label for="itemNumberOf">  of:  </label>
+                        <input id="itemNumberOf" />
+                    </div>
+                </div>
+                <div class="panel" id="poNumber">
+                    <p id="poNumberInfo">
+                        Enter the purchase order number in the P.O. Number field if you have one.
+                    </p>
+                    <label for="poNumberInput">P.O. Number:  </label>
+                    <input id="poNumberInput" />
+                </div>
+                <div class="panel" id="docNameDesc">
+                    <header id="docDescHeader">Document Name/Description</header>
+                    <header id="docDescInfoHeader">(Optional)</header>
+                    <p id="docDescInfo">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor. Aenean massa.
+                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur.
+                    </p>
+                </div>
+                <div class="panel" id="docAlias">
+                    <input id="docAliasBox">
+                    <p id="docAliasInfo">
+                        The field name to select so that this value is visible in a personal view is
+                    </p>
+                    <p id="docDescFinisher">
+                        'Document Name Alias'.
+                    </p>
+                </div>
+            </div>
+            <div class="panel" id="specialReqs">
+                <header id="specialReqHeader">Special Requirements</header>
+                <input id="specialRequirementBox" />
+            </div>
+        </div>
+        <div id="foot">
+            <button></button>
+            <button></button>
+        </div>
     </div>
 </body>
 </html>
